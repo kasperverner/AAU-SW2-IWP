@@ -6,14 +6,16 @@
 </head>
 <body>
     <script>
-        (function (title,heading,demoString) {
+        function renderPage(title,heading,demoString) {
             const h = document.createElement('h1');
             h.textContent = heading;
             document.body.appendChild(h);
 
             document.title = title;
             console.log(demoString);
-        })("Simple IWP Demo", "IWP demo","JS Script has executed")
+        }
+        
+        renderPage("Simple IWP Demo", "IWP demo","JS Script has executed")
     </script>
 </body>
 </html>
