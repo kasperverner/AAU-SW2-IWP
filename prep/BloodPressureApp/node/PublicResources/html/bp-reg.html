@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>IWP Health App</title>
+    <link rel="stylesheet" type="text/css" href="css/simple.css">
+</head>
+<body>
+  <header> IWP  Health App</header>
+  <h1 id="id1"> IWP Blood pressure recorder </h1>
+
+  <!-- FEATURE: Blood Pressure Person Registration  -->
+  <section id="registrationSection_id">
+    <h2 id="id2"> Register Personal Data  </h2>
+    <form id="patientRegistrationForm_id"  action="patients" method="post">
+      <fieldset>
+        <legend>Personal information:</legend>
+        <div class="myFormLayout"> <!-- Hmm, fieldset seems not too happy to work with grid layout used for the form??-->
+        <label for="mail_id"> Contact E-mail Address</label>
+        <input type="mail"  name="patientEmail" id="email_id" value="" required size="30" minlength="1" maxlength="50">
+        <label for="CPRRegistration_id"> CPR number: (ddmmyyxxxx) </label>
+        <input type="text" name="CPRNumber" id="CPRRegistration_id" pattern="\d{10,10}" minlength="10" maxlength="10" required>
+        <input type="submit" id="registerBtn_id" value="Register">
+        </div>
+      </fieldset>
+    </form>
+  </section>
+  <!-- END OF Blood Pressure Person Registration-->
+
+  <section>
+    <h2 id="id3"> Record Measurement </h2>
+    <form id="recordMeasurementForm_id"  action="measurements" method="post">
+      <fieldset>
+        <legend>Input Measurement Data:</legend>
+        <div class="myFormLayout">
+          <label for="CPRRegistration_id"> CPR number: (ddmmyyxxxx) </label>
+          <input type="text" name="CPRNumber" id="CPRRecord_id" pattern="\d{10,10}" minlength="10" maxlength="10" required>
+
+          <label for="SystolicPressure_id"> Systolic Pressure </label>
+          <input type="number" name="systolic" id="SystolicPressure_id" min="30" maxl="200" required>
+
+          <label for="DiastolicPressure_id"> Diastolic Pressure </label>
+          <input type="number" name="diastolic" id="DiastolicPressure_id" min="30" max="200" required>
+
+          <label for="HeartRate_id"> Heart Rate </label>
+          <input type="number" name="heartRate" id="HeartRate_id" min="30" max="240" required>
+
+          <input type="submit" id="recordBtn_id" value="Register">
+        </div>
+      </fieldset>
+    </form>
+
+    <div id="output_id" style="visibility: hidden;">Reminder</div>
+
+  </section>
+
+  <script type="module"  src="js/bp-client.js"></script>
+</body>
+</html>

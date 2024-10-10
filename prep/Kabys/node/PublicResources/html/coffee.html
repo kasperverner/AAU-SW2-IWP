@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>My APP</title>
+    <link rel="stylesheet" type="text/css" href="css/simple.css">
+</head>
+<body>
+  <h1 id="id1"> IWP KABYS (KAffe-Bestillings-sYStem) </h1>
+
+<section>
+
+  <form id="orderForm" action="coffee-order" method="post">
+    <!-- Action/Method is provided for clarity but doesn't use browsers' form submission, but handled in JS -->
+  <div>
+    <label for="name">Your Name?</label>
+  <input class="form-input" type="text" id="name" value="" required minlength="1"
+style="max-width: none;">
+</div>
+<div>
+  <label for="coffeeStrength">How strong do you like your coffee?</label>
+<input type="range" id="coffeeStrength" name="_strength" min="1" max="10" required>
+</div>
+<div>
+  <label for "milkType">What kind of milk would you like?</label>
+<input type=radio id="omMilk name "milk value "noMilk checked required >
+<input type=radio id="cowMilk name "milk value "cowMilk >
+...
+</div>
+</form>
+
+<script>
+// Code related to form submission handling goes here
+</script>
+<div id=resultOrder style=visibility:hidden;>Result</output></div>
+</section>
+
+
+<section>
+<form id="coffeeStatusForm_id"  action="coffee-orders" method="get"> <!-- Action/Method is provided for clarity: This app doesn't use browsers form submission, but handled in JS-->
+  <fieldset>
+   <legend>Kaffe Status:</legend>
+   <div class="myFormLayout"> <!-- Hmm, fieldset seems not too happy to work with grid layout used for the form??-->
+   <label for="coffeeOrder_id"> Ordre Nummer</label>
+   <input type="number"  name="orderID" id="coffeeOrder_id" placeholder="0" required min="0" step="1">
+
+  <input type="submit" id="submitStatusBtn_id" value="Check">
+  </div>
+</fieldset>
+</form>
+<output id="status_id" style="visibility:hidden">Status </output>
+</section>
+
+<script  src="js/coffee-client.js"></script>
+
+</body>
+</html>
